@@ -35,9 +35,9 @@
       <div class="navbar__site-name">Just A Bite!</div>
       <ul class="navbar__list">
         <li class="active"><a href="#">抽個<br class="break">大獎</a></li>
-        <li><a href="#">我要<br class="break">點餐</a></li>
-        <li><a href="#">查詢<br class="break">訂單</a></li>
-        <li><a href="#">常見<br class="break">問題</a></li>
+        <li class="conversion-api">我要點餐</li>
+        <li>查詢訂單</li>
+        <li>常見問題</li>
       </ul>
     </div>
   </nav>
@@ -134,6 +134,13 @@
       <h2 class="copyright__info">Copyright © 2020 Just A Bite All Rights Reserved. 咬一口股份有限公司版權所有</h2>
     </div>
   </footer>
+  <script>
+    const btn = document.querySelector('.conversion-api');
+    btn.addEventListener('click', () => {
+      console.log('btn clicked')
+      fbq('track', 'Purchase', {currency: "USD", value: 30.00});
+    })
+  </script>
 </body>
 
 </html>
